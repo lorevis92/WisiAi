@@ -1,0 +1,43 @@
+<div class="chat-bubble-container" *ngIf="isDataLoaded">
+  <div class="chat-container" *ngIf="chatVisible">
+    <div class="assistant-info" [ngStyle]="{'background-color': assistant.assistantBackgroundColor, 'color': assistant.assistantTextColor}">
+      <img src={{assistant.assistantImage}} alt="{{ assistant.assistantName }}" />
+      <div>
+        <h4>{{ assistant.assistantName }}</h4>
+        <p>{{ assistant.assistantSubtitle }}</p>
+      </div>
+      <div class="refresh">
+        <button (click)="startNewChat()" class="refresh">
+          <span class="material-symbols-outlined refresh">
+          refresh
+          </span>
+        </button>
+      </div>
+    </div>
+    
+      <div class="message-container" #messageContainer>
+        <div class="assistant-message" [innerHTML]="assistant.messaggioIniziale"></div>
+      
+      <!-- Qui il ciclo per i messaggi -->
+        <div [ngClass]="{ 'user-message': message.isUser, 'assistant-message': !message.isUser }" *ngFor="let message of messages">
+          <div [innerHTML]="message.text"></div>
+        </div>
+                    <!-- Qui inserisci il container per l'animazione dei puntini -->
+                    <div *ngIf="showLoadingDots" class="dot-container">
+                      <div class="dot"></div>
+                      <div class="dot"></div>
+                      <div class="dot"></div>
+        </div>
+      </div>
+    
+      <div class="user-input">
+        <input [(ngModel)]="userMessage" placeholder="Type your message..." (keyup.enter)="sendUserMessage()" />
+        <button (click)="sendUserMessage()" [ngStyle]="{'background-color': assistant.assistantBackgroundColor, 'color': assistant.assistantTextColor}">Send</button>
+      </div>
+  </div>
+  <div class="bubble-container" (click)="changeChatVisibility()" [ngStyle]="{'background-color': assistant.assistantBackgroundColor, 'color': assistant.assistantTextColor}">
+    <span class="material-symbols-outlined">
+      forum
+    </span>
+  </div>
+</div>

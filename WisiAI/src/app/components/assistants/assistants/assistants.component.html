@@ -1,0 +1,24 @@
+<div class="container">
+    <div>
+      <h1 class="text-center">Assistants</h1>
+      <h4 class="text-secondary text-center mt-3 mb-5">Assistente selezionato: {{ getSelectedAssistantName() }} </h4>
+    </div>
+    <div class="text-center">
+      <button class="btn btn-success" (click)="createAssistant()" (click)="createOpenAIAssistant()">Aggiungi Assistente</button>
+      <p class="text-success">{{ creationMessage }}</p>
+    </div>
+    <div class="row justify-content-around flex-wrap ">
+      <div class="col-4 mb-5" *ngFor="let assistant of assistants">
+        <div class="card h-100 text-center assistantContainer" [ngClass]="{ 'border-primary': selectedAssistantId === assistant.assistantId }">
+          <img [src]="assistant.assistantImage" class="card-img-top m-0" alt="Assistants foto">
+          <div class="card-body m-0">
+            <h5 class="card-title m-0">{{ assistant.assistantName }}</h5>
+          </div>
+          <div class="card-footer text-center">
+            <button class="btn btn-primary" (click)="selectAssistant(assistant.assistantId)">Select</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

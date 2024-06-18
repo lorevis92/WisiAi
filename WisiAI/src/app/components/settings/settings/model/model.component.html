@@ -1,0 +1,39 @@
+<app-settingsnavbar></app-settingsnavbar>
+
+<div class="row" *ngIf="dataLoaded">
+    <form class="mt-4 col-6 m-5" (ngSubmit)="onFormSubmit()">
+        <h1>Modello</h1>
+
+        <!-- Nome -->
+        <div class="mb-3">
+            <label for="name" class="form-label">Nome</label>
+            <textarea id="name" class="form-control" rows="4" placeholder="Nome assistente" [(ngModel)]="name" name="name"></textarea>
+        </div>
+
+        <!-- Istruzioni -->
+        <div class="mb-3">
+            <label for="instructions" class="form-label">Instructions</label>
+            <textarea id="instructions" class="form-control" rows="4" placeholder="The instructions allows you to customize your chatbot's personality and style. Please make sure to experiment with the instructions by making it very specific to your data and use case." [(ngModel)]="instructions" name="instructions"></textarea>
+        </div>
+
+        <!-- Selezione modello -->
+        <div class="mb-3">
+            <label for="model" class="form-label">Modello</label>
+            <select id="model" class="form-select" [(ngModel)]="model" name="model">
+                <option value="gpt-3.5-turbo">GPT 3.5 Turbo</option>
+                <option value="gpt-4">GPT 4</option>
+                <option value="gpt-4-turbo">GPT 4 Turbo</option>
+            </select>
+        </div>
+
+        <!-- Temperatura -->
+        <div class="mb-3">
+            <label for="temperature" class="form-label">Temperatura</label>
+            <input type="range" id="temperature" class="form-range" min="0" max="2" [(ngModel)]="temperature" name="temperature">
+            <label for="temperature" class="form-label">Selected Temperature: {{ temperature }}</label>
+        </div>
+
+        <!-- Bottone Salva -->
+        <button type="submit" class="btn btn-primary">Salva</button>
+    </form>
+</div>

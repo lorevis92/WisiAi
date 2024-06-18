@@ -1,0 +1,24 @@
+<app-sources-navbar></app-sources-navbar>
+<div class="container mt-4">
+    <h1>File Source Component</h1>
+  
+    <form [formGroup]="fileForm" (ngSubmit)="onSubmit()">
+      <div class="mb-3">
+        <label for="fileInput" class="form-label">Carica un nuovo file:</label>
+        <input type="file" id="fileInput" (change)="onFileChange($event)" class="form-control" />
+      </div>
+  
+      <button type="submit" class="btn btn-primary">Carica</button>
+    </form>
+  
+    <div class="mt-4">
+      <h4>Files Caricati:</h4>
+      <ul class="list-group">
+        <li *ngFor="let file of files; let i = index" class="list-group-item">
+          {{ file.name }}
+          <button type="button" class="btn btn-danger btn-sm float-end" (click)="removeFile(i)">Rimuovi</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+  

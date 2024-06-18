@@ -1,0 +1,56 @@
+<app-settingsnavbar></app-settingsnavbar>
+<div class="row">
+    <form class="mt-4 col-6 m-5" (ngSubmit)="onFormSubmit()">
+        <div class="mb-3">
+            <label for="assistantNameInput" class="form-label">Nome dell'assistente:</label>
+            <input id="assistantNameInput" [(ngModel)]="assistant.assistantName" name="assistantName" class="form-control"
+                placeholder="Nome assistente" (ngModelChange)="onInputChange()">
+        </div>
+        
+
+        <!-- Campo modifica Foto -->
+        <div class="mb-3">
+            <label for="assistantImageInput" class="form-label">Immagine dell'assistente:</label>
+            <input id="assistantImageInput" [(ngModel)]="assistant.assistantImage" name="assistantImage" class="form-control"
+                placeholder="Immagine assistente">
+        </div>
+
+        <!-- Campo modifica Descrizione -->
+        <div class="mb-3">
+            <label for="assistantSubtitleInput" class="form-label">Descrizione dell'assistente:</label>
+            <input id="assistantSubtitleInput" [(ngModel)]="assistant.assistantSubtitle" name="assistantSubtitle"
+                class="form-control" placeholder="Descrizione assistente">
+        </div>
+
+        <!-- Campo modifica Primo messaggio assistente -->
+        <div class="mb-3">
+            <label for="assistantFirstMessageInput" class="form-label">Messaggio iniziale dell'assistente:</label>
+            <input id="assistantFirstMessageInput" [(ngModel)]="assistant.messaggioIniziale" name="assistantFirstMessage"
+                class="form-control" placeholder="Messaggio iniziale">
+        </div>
+
+        <!-- Campo modifica Colore di Sfondo -->
+        <div class="mb-3">
+            <label for="assistantBackgroundColorInput" class="form-label">Colore di sfondo dell'assistente:</label>
+              <input type="color" id="assistantBackgroundColorInput" [(ngModel)]="assistant.assistantBackgroundColor"
+                     name="assistantBackgroundColor" class="form-control">
+        </div>
+
+        <!-- Campo modifica Colore di Testo -->
+        <div class="mb-3">
+            <label for="assistantTextColorInput" class="form-label">Colore testo dell'assistente:</label>
+              <input type="color" id="assistantTextColorInput" [(ngModel)]="assistant.assistantTextColor"
+                     name="assistantTextColor" class="form-control">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Salva</button>
+    </form>
+</div>
+
+
+<div class="chatContainer">
+    <app-interfaccia-chat [assistant]="assistant"></app-interfaccia-chat>
+</div>
+
+
+

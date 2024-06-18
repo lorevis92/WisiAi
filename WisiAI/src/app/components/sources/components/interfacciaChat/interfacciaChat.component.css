@@ -1,0 +1,188 @@
+:host {
+  display: block; /* Posizione relativa per posizionare i figli in base a questo elemento */
+}
+
+/* Stili per la chat container */
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  border: 1px solid #ccc;
+  height: 520px; /* Altezza fissa */
+  border-radius: 8px;
+  position: relative;
+}
+
+/* Stili per le informazioni dell'assistente */
+.assistant-info {
+  padding: 10px;
+  background-color: #2a97cf;
+  top: 0;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-around;
+}
+
+
+.assistant-info img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  object-fit: cover;
+}
+
+.assistant-info img, .assistant-info div {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.assistant-info p{
+  width: 250px;
+  overflow-wrap: break-word;
+}
+
+/* Stili per il contenitore dei messaggi */
+.message-container {
+  overflow-y: auto;
+  background-color: #fff;
+}
+
+.user-message,
+.assistant-message {
+  background-color: #f5f5f5;
+  padding: 10px;
+  border-radius: 8px;
+  max-width: 90%; /* Limita la larghezza del messaggio */
+  margin-top: 10px;
+  height: auto;
+  overflow-wrap: break-word;
+  margin-left: 10px;
+}
+
+
+.user-message {
+  background-color: #e0f7fa;
+  margin-left: auto;
+  margin-right: 10px;
+}
+
+/* Stili per l'input dell'utente */
+.user-input {
+  background-color: #fff;
+  display: flex;
+  margin-left: 10px;
+  margin-top: auto;
+  margin-bottom: 10px;
+  padding-top: 10px;
+  height: auto;
+  overflow-wrap: break-word;
+}
+
+.chat-container.user-input-below-last-message .user-input {
+  margin-top: auto;
+}
+
+.user-input input {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  width: 300px;
+}
+
+.user-input input:hover {
+  border-color: #aaa; /* Imposta il colore del bordo quando l'input è selezionato */
+}
+
+.user-input button {
+  width: 75px;
+  margin-left: 5px;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: #2a97cf;
+  color: #fff;
+  border: none;
+}
+
+.bubble-container{
+  padding: 10px;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  border-right: auto;
+  margin-top: 20px;
+  margin-left: auto;
+}
+
+.bubble-container:hover{
+  cursor: pointer;
+}
+
+.bubble-container .material-symbols-outlined {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+/* interfacciaChat.component.css */
+@keyframes dotWave {
+  0%, 60%, 100% {
+      transform: translateY(0);
+      background-color: lightgray;
+  }
+  30% {
+      transform: translateY(-10px);
+      background-color: darkgray;
+  }
+}
+
+.dot-container {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  margin: 20px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  margin: 3px;
+  background-color: lightgray;
+  border-radius: 50%;
+  animation: dotWave 1.5s linear infinite;
+}
+
+.dot:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.dot:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+.dot:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+.refresh {
+  display: flex; /* Usa flex per garantire allineamenti interni facili */
+  align-items: center; /* Centra il contenuto del bottone verticalmente */
+  height: 100%; /* Opcionalmente assicurati che occupi l'intera altezza del padre */
+  background-color: transparent; /* Fondo trasparente */
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.refresh button {
+  cursor: pointer;
+  background: none;
+  border: none;
+  display: flex;
+  align-items: center; /* Assicurati che l'icona nel bottone sia centrata */
+}

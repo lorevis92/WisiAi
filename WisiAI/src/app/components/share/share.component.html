@@ -1,0 +1,69 @@
+<div class="d-flex justify-content-around flex-wrap">
+    <div class="d-flex justify-content-center align-items-center vh-100">
+        <button type="button" class="btn btn-secondary btn-square" data-bs-toggle="modal" data-bs-target="#linkModal">
+            Share link
+        </button>
+    </div>
+    
+    <!-- Modal -->
+    <div class="modal fade" id="linkModal" tabindex="-1" aria-labelledby="linkModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <h5 class="modal-title mx-auto">Share assistant link{{selectedAssistantId}}</h5>
+                    <!--<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"> </button>-->
+                </div>
+                <div class="modal-body text-center">
+                    You can share this link with anybody to make them preview your assistant.
+                    http://localhost:8080/assistant/{{selectedAssistantId}}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Second option -->
+    <div class="d-flex justify-content-center align-items-center vh-100">
+        <button type="button" class="btn btn-secondary btn-square" data-bs-toggle="modal" data-bs-target="#scriptModal">
+            Embed on website with a script
+        </button>
+    </div>
+    
+    <!-- Modal -->
+    <div class="modal fade" id="scriptModal" tabindex="-1" aria-labelledby="scriptModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <h5 class="modal-title mx-auto">Embed your assistant on your website with this script</h5>
+                    <!--<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"> </button>-->
+                </div>
+                <div class="modal-body text-center">
+                    You can embed your assistant on your website with this script.
+                    http://localhost:8080/assistant/{{selectedAssistantId}}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Third option -->
+    <div class="d-flex justify-content-center align-items-center vh-100">
+        <button type="button" class="btn btn-secondary btn-square" data-bs-toggle="modal" data-bs-target="#IframeModal">
+            Embed on website with an Iframe
+        </button>
+    </div>
+    
+    <!-- Modal -->
+    <div class="modal fade" id="IframeModal" tabindex="-1" aria-labelledby="IframeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <h5 class="modal-title mx-auto">Embed your assistant on your website with this Iframe</h5>
+                    <!--<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"> </button>-->
+                </div>
+                <div class="modal-body text-center">
+                    You can embed your assistant on ypur website with this Iframe.
+                    http://localhost:8080/assistant/{{selectedAssistantId}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

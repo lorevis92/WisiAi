@@ -1,0 +1,8 @@
+.color-picker {
+  display: flex;
+  align-items: center;
+}
+
+#assistantBackgroundColorInput, #assistantTextColorInput {
+  width: 50px;
+}

@@ -1,0 +1,45 @@
+:host {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 220px; /* Imposta la larghezza desiderata della sidebar */
+  background-color: #333; /* Cambia colore di sfondo della sidebar */
+  padding-top: 20px; /* Aggiungi padding superiore */
+  /* overflow-y: auto;  Aggiungi uno scrolling verticale se necessario */
+  z-index: 1000; /* Imposta un indice Z alto per assicurarti che la sidebar sia sopra gli altri elementi */
+}
+
+/* Stili per l'elemento */
+.nav-item {
+  transition: background-color 0.3s; /* Aggiungi una transizione di 0.3 secondi per la proprietà background-color */
+  width: 100%;
+}
+
+/* Stili per l'elemento quando il mouse ci passa sopra */
+.nav-item:hover,
+.nav-link.active {
+  background-color: #555; /* Cambia colore di sfondo al passaggio del mouse */
+}
+
+/* Stili per l'elemento quando viene cliccato */
+.nav-item:active {
+  background-color: #555; /* Cambia colore di sfondo quando l'elemento è cliccato */
+}
+
+/* Stili per l'elemento quando è attivo (router-link-active) */
+.nav-link.active {
+  color: #fff !important; /* Colore del testo bianco quando l'elemento è attivo */
+}
+
+/* Evidenzia il bordo quando l'elemento è attivo o cliccato */
+.nav-item.active,
+.nav-item:active,
+.nav-item:hover {
+  border-left: 3px solid #fff; /* Aggiungi un bordo a sinistra quando l'elemento è attivo, cliccato o passato col mouse */
+}
+
+ul.nav {
+  width: 100%;
+}
